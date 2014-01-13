@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    calabash-android (0.4.19.pre1.pre.waitdeep)
+    calabash-android (0.4.19.pre1.waitdeep.debug)
       awesome_print
       cucumber
       escape (~> 0.0.4)

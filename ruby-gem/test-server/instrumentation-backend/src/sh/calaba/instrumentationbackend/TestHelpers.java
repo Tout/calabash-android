@@ -17,6 +17,7 @@ import android.content.res.Resources.NotFoundException;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.TextView;
+import android.util.Log;
 
 public class TestHelpers {
 
@@ -59,8 +60,10 @@ public class TestHelpers {
     }
 
     public static View getViewById(String resName) {
+        Log.d("swolfedebug", resName);
         int id = getIdFromString(resName);
         if (id == 0) {
+            Log.d("swolfedebug", "getIdFromString didn't find an id for " + resName);
             return null;
         }
 
