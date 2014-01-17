@@ -66,7 +66,8 @@ public class TestHelpers {
             Log.d("swolfedebug", "getIdFromString() didn't find an id for " + resName);
             return null;
         } else {
-          Log.d("swolfedebug", String.format("getIdFromString() found id %s for resName %s", id, resName);
+          Log.d("swolfedebug", String.format("getIdFromString() found id %s for resName %s", id, resName));
+        }
 
         return InstrumentationBackend.solo.getView(id);
     }
