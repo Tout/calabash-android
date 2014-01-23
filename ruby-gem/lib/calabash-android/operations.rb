@@ -1,4 +1,3 @@
-require 'debugger'
 require 'httpclient'
 require 'json'
 require 'net/http'
@@ -479,8 +478,7 @@ module Operations
       end
 
       env_options = {:target_package => package_name(@app_path),
-                     #:main_activity => main_activity(@app_path),
-                     :main_activity => "com.tout.app.activity.MainActivity",
+                     :main_activity => main_activity(@app_path),
                      :test_server_port => @test_server_port,
                      :debug => false,
                      :class => "sh.calaba.instrumentationbackend.InstrumentationBackend"}
