@@ -6,6 +6,7 @@ import sh.calaba.instrumentationbackend.Result;
 import sh.calaba.instrumentationbackend.TestHelpers;
 import sh.calaba.instrumentationbackend.actions.Action;
 import android.view.View;
+import android.util.Log;
 
 
 public class WaitDeepForViewById implements Action {
@@ -14,9 +15,11 @@ public class WaitDeepForViewById implements Action {
     public Result execute(String... args) {
         final View view = TestHelpers.getViewById(args[0]);
 
+        Log.d("wait_for_view", "WaitDeepForViewById waiting for view: " + args[0]);
+
         if(view == null) {
           return new Result(false, "Could not find view with id: '" + args[0] + "'");
-        } 
+        }
 
         if ( InstrumentationBackend.solo.waitForView(view) ) {
           return Result.successResult();
