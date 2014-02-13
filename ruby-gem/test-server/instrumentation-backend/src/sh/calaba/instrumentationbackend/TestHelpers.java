@@ -60,15 +60,16 @@ public class TestHelpers {
     }
 
     public static View getViewById(String resName) {
-        Log.d("swolfedebug", "getViewById() querying for R.id for " + resName);
+        Log.d("tout-debug", "getViewById() querying for R.id for " + resName);
         int id = getIdFromString(resName);
         if (id == 0) {
-            Log.d("swolfedebug", "getIdFromString() didn't find an id for " + resName);
+            Log.d("tout-debug", "getIdFromString() didn't find an id for " + resName);
             return null;
         } else {
-          Log.d("swolfedebug", String.format("getIdFromString() found id %s for resName %s", id, resName));
+          Log.d("tout-debug", String.format("getIdFromString() found id %s for resName %s", id, resName));
         }
 
+        Log.d("tout-debug", "about to Robotium#getView for: " + resName);
         return InstrumentationBackend.solo.getView(id);
     }
 
