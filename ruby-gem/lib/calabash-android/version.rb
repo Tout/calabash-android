@@ -1,5 +1,5 @@
 module Calabash
   module Android
-    VERSION = "0.4.19.pre1.waitdeep.logwaits"
+    VERSION = "0.4.22.pre2"
   end
 end
