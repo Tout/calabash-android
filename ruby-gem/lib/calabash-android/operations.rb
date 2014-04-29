@@ -393,7 +393,7 @@ module Operations
           f.write res
         end
       else
-        screenshot_cmd = "java -jar #{File.join(File.dirname(__FILE__), 'lib', 'screenshotTaker.jar')} #{serial} #{path}"
+        screenshot_cmd = "java -jar #{File.join(File.dirname(__FILE__), 'lib', 'screenshotTaker.jar')} #{serial} \"#{path}\""
         log screenshot_cmd
         raise "Could not take screenshot" unless system(screenshot_cmd)
       end
@@ -720,6 +720,16 @@ module Operations
     center_x, center_y = find_coordinate(uiquery)
 
     performAction("touch_coordinate", center_x, center_y)
+  end
+
+  def keyboard_enter_text(text, options = {})
+    performAction('keyboard_enter_text', text)
+  end
+
+  def enter_text(uiquery, text, options = {})
+    touch(uiquery, options)
+    sleep 0.5
+    keyboard_enter_text(text, options)
   end
 
   def find_coordinate(uiquery)
